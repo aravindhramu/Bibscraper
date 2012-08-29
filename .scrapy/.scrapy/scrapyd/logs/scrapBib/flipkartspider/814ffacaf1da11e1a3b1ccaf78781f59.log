@@ -1,0 +1,5 @@
+2012-08-29 18:37:39+0530 [scrapy] INFO: Scrapy 0.14.4 started (bot: scrapybot)
+2012-08-29 18:37:40+0530 [scrapy] DEBUG: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, MemoryUsage, SpiderState
+2012-08-29 18:37:40+0530 [scrapy] DEBUG: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, RedirectMiddleware, CookiesMiddleware, HttpCompressionMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2012-08-29 18:37:40+0530 [scrapy] DEBUG: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2012-08-29 18:37:40+0530 [scrapy] DEBUG: Enabled item pipelines: 

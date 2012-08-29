@@ -1,0 +1,32 @@
+2012-08-29 18:43:06+0530 [scrapy] INFO: Scrapy 0.14.4 started (bot: scrapBib)
+2012-08-29 18:43:06+0530 [scrapy] DEBUG: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, MemoryUsage, SpiderState
+2012-08-29 18:43:06+0530 [scrapy] DEBUG: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, RedirectMiddleware, CookiesMiddleware, HttpCompressionMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2012-08-29 18:43:06+0530 [scrapy] DEBUG: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2012-08-29 18:43:06+0530 [scrapy] DEBUG: Enabled item pipelines: ScrapbibPipeline
+2012-08-29 18:43:06+0530 [flipkartspider] INFO: Spider opened
+2012-08-29 18:43:06+0530 [flipkartspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2012-08-29 18:43:06+0530 [scrapy] DEBUG: Telnet console listening on 0.0.0.0:6023
+2012-08-29 18:43:06+0530 [scrapy] DEBUG: Web service listening on 0.0.0.0:6080
+2012-08-29 18:43:06+0530 [flipkartspider] DEBUG: Redirecting (301) to <GET http://www.flipkart.com/all-words-8183070744/p/itmdyupxgqk9rbqr?pid=9788183070744> from <GET http://www.flipkart.com/search/a/all?query=8183070744>
+2012-08-29 18:43:07+0530 [flipkartspider] DEBUG: Crawled (200) <GET http://www.flipkart.com/all-words-8183070744/p/itmdyupxgqk9rbqr?pid=9788183070744> (referer: None)
+2012-08-29 18:43:07+0530 [flipkartspider] DEBUG: Scraped from <200 http://www.flipkart.com/all-words-8183070744/p/itmdyupxgqk9rbqr?pid=9788183070744>
+	{'bookname': [u'ALL ABOUT WORDS 8183070744: Book: Maxwell Nurnberg (9788183070744) | Flipkart.com'],
+	 'bookstore': 'flipkart.com',
+	 'price': [u'Rs. 95']}
+2012-08-29 18:43:07+0530 [flipkartspider] INFO: Closing spider (finished)
+2012-08-29 18:43:07+0530 [flipkartspider] INFO: Dumping spider stats:
+	{'downloader/request_bytes': 1628,
+	 'downloader/request_count': 2,
+	 'downloader/request_method_count/GET': 2,
+	 'downloader/response_bytes': 241803,
+	 'downloader/response_count': 2,
+	 'downloader/response_status_count/200': 1,
+	 'downloader/response_status_count/301': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2012, 8, 29, 13, 13, 7, 505369),
+	 'item_scraped_count': 1,
+	 'scheduler/memory_enqueued': 2,
+	 'start_time': datetime.datetime(2012, 8, 29, 13, 13, 6, 250630)}
+2012-08-29 18:43:07+0530 [flipkartspider] INFO: Spider closed (finished)
+2012-08-29 18:43:07+0530 [scrapy] INFO: Dumping global stats:
+	{'memusage/max': 211877888, 'memusage/startup': 211877888}

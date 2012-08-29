@@ -1,0 +1,30 @@
+2012-08-29 18:43:41+0530 [scrapy] INFO: Scrapy 0.14.4 started (bot: scrapBib)
+2012-08-29 18:43:41+0530 [scrapy] DEBUG: Enabled extensions: LogStats, TelnetConsole, CloseSpider, WebService, CoreStats, MemoryUsage, SpiderState
+2012-08-29 18:43:41+0530 [scrapy] DEBUG: Enabled downloader middlewares: HttpAuthMiddleware, DownloadTimeoutMiddleware, UserAgentMiddleware, RetryMiddleware, DefaultHeadersMiddleware, RedirectMiddleware, CookiesMiddleware, HttpCompressionMiddleware, ChunkedTransferMiddleware, DownloaderStats
+2012-08-29 18:43:41+0530 [scrapy] DEBUG: Enabled spider middlewares: HttpErrorMiddleware, OffsiteMiddleware, RefererMiddleware, UrlLengthMiddleware, DepthMiddleware
+2012-08-29 18:43:41+0530 [scrapy] DEBUG: Enabled item pipelines: ScrapbibPipeline
+2012-08-29 18:43:41+0530 [homeshopspider] INFO: Spider opened
+2012-08-29 18:43:41+0530 [homeshopspider] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2012-08-29 18:43:41+0530 [scrapy] DEBUG: Telnet console listening on 0.0.0.0:6023
+2012-08-29 18:43:41+0530 [scrapy] DEBUG: Web service listening on 0.0.0.0:6080
+2012-08-29 18:43:41+0530 [homeshopspider] DEBUG: Crawled (200) <GET http://www.homeshop18.com/8183070744/search:8183070744> (referer: None)
+2012-08-29 18:43:41+0530 [homeshopspider] DEBUG: Scraped from <200 http://www.homeshop18.com/8183070744/search:8183070744>
+	{'bookname': [u' All About Words'],
+	 'bookstore': 'homeshop18.com',
+	 'price': [u'Rs. 67']}
+2012-08-29 18:43:41+0530 [homeshopspider] INFO: Closing spider (finished)
+2012-08-29 18:43:41+0530 [homeshopspider] INFO: Dumping spider stats:
+	{'downloader/request_bytes': 230,
+	 'downloader/request_count': 1,
+	 'downloader/request_method_count/GET': 1,
+	 'downloader/response_bytes': 39227,
+	 'downloader/response_count': 1,
+	 'downloader/response_status_count/200': 1,
+	 'finish_reason': 'finished',
+	 'finish_time': datetime.datetime(2012, 8, 29, 13, 13, 41, 660434),
+	 'item_scraped_count': 1,
+	 'scheduler/memory_enqueued': 1,
+	 'start_time': datetime.datetime(2012, 8, 29, 13, 13, 41, 305715)}
+2012-08-29 18:43:41+0530 [homeshopspider] INFO: Spider closed (finished)
+2012-08-29 18:43:41+0530 [scrapy] INFO: Dumping global stats:
+	{'memusage/max': 211881984, 'memusage/startup': 211881984}

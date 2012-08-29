@@ -1,0 +1,14 @@
+setup.py
+project.egg-info/PKG-INFO
+project.egg-info/SOURCES.txt
+project.egg-info/dependency_links.txt
+project.egg-info/entry_points.txt
+project.egg-info/top_level.txt
+scrapBib/__init__.py
+scrapBib/items.py
+scrapBib/pipelines.py
+scrapBib/settings.py
+scrapBib/spiders/__init__.py
+scrapBib/spiders/flipkart.py
+scrapBib/spiders/homeshop18.py
+scrapBib/spiders/infibeam.py
