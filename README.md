@@ -9,7 +9,7 @@ This project is based on scrapy module in python.
 
 To use it navigate inside scrapBib folder and type:
 
-scrapy crawl <crawler-name> -a isbn=<isbn no>
+scrapy crawl crawler_name -a isbn=isbn_number
 
 crawler names are defined inside scrapBib/spiders/ in their respective .py files.
 
