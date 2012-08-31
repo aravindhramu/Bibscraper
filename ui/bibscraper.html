@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,35 +28,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
 
-    <script type='text/javascript'>
-       function FetchResults()
-       {
-         var xmlhttp;
-         var isbn = document.getElementById('isbn').value;
-         if (isbn == "Type book's ISBN here")
-             return false;
-         if (len(isbn) <10 || len(isbn) > 13)
-             return false;
-         if (window.XMLHttpRequest)
-         {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-         }
-         else
-         {// code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-         }
-         xmlhttp.onreadystatechange=function()
-         {
-          if (xmlhttp.readyState==4 && xmlhttp.status==200)
-          {
-           document.getElementById("results").innerHTML=xmlhttp.responseText;
-          }
-         }
-         xmlhttp.open("GET","fetchprices.php?isbn="+isbn,true);
-         xmlhttp.send()
-         return true; 
-       }
-    </script>
+
   </head>
 
   <body>
@@ -91,32 +62,78 @@
         <label>ISBN Number</label>
         <input type="text" placeholder="Type book's ISBN here" id="isbn">
         <span class="help-block">Eg: 9381810788 </span>
-        <button type="submit" class="btn btn-primary" onclick=FetchResults()>Search</button>
+        <input type="button" class="btn btn-primary" id='mybtn' value="Search" onclick=FetchResults() />
+        <input type="button" class="btn btn-warning" value="Reset" onclick="document.location.reload()" />
+        <p></p><br/>
+        <legend></legend>
       </form>
-
-    <div id="results">
+    <div id="results" class="span12" style="display:none">
+    </div>
+    <div id="process" class="span4">
      
     </div>
 
     </div> <!-- /container -->
+    <script type='text/javascript'>
+       function len(a)
+       {
+         return a.length;
+       }
+       function FetchResults()
+       {
+         var xmlhttp;
+         var isbn = document.getElementById('isbn').value;
+         document.getElementById('process').style.display = "block";
+         document.getElementById('process').innerHTML = "<img src='ajax-loader.gif'>";
+         if (isbn == "Type book's ISBN here")
+             return false;
+         if (len(isbn) <10 || len(isbn) > 13)
+             return false;
+         if (window.XMLHttpRequest)
+         {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+         }
+         else
+         {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+         xmlhttp.open("GET","fetchresults.php?isbn="+isbn,true);
+         xmlhttp.send()
+         xmlhttp.onreadystatechange=function()
+         {
+          if (xmlhttp.readyState==4 && xmlhttp.status==200)
+          {
+           document.getElementById('process').style.display = "none";
+           document.getElementById('results').style.display = "block";
+           document.getElementById('mybtn').disabled = true;
+           var res = xmlhttp.responseText;
+           res = res.split("\n");
+           l = res.length;
+           st = 0;
+           tableSt = "<table class='table table-striped table-bordered'>";
+           tabCon = "<tr><th>Bookstore</th><th>Title</th><th>Price</th></tr>";
+           for(i=0;i<l;i++)
+           {
+             if(res[i] =="")
+               continue;
+             cont = JSON.parse(res[i]);
+             if(cont.bookname[0] == "" || cont.price[0] == "")
+               continue;
+             if((cont.price[0]).indexOf("Rs") == -1)
+               price = "Rs. " + cont.price[0] 
+             else
+               price = cont.price[0]
+             tabCon = tabCon + "<tr><td>" + cont.bookstore + "</td><td>" + cont.bookname[0] + "</td><td>" + price + "</td></tr>";
+           }
+           tableEnd = "</table>";
+           document.getElementById('results').innerHTML = tableSt+tabCon+tableEnd ;
+          }
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap/js/jquery.js"></script>
-    <script src="bootstrap/js/bootstrap-transition.js"></script>
-    <script src="bootstrap/js/bootstrap-alert.js"></script>
-    <script src="bootstrap/js/bootstrap-modal.js"></script>
-    <script src="bootstrap/js/bootstrap-dropdown.js"></script>
-    <script src="bootstrap/js/bootstrap-scrollspy.js"></script>
-    <script src="bootstrap/js/bootstrap-tab.js"></script>
-    <script src="bootstrap/js/bootstrap-tooltip.js"></script>
-    <script src="bootstrap/js/bootstrap-popover.js"></script>
-    <script src="bootstrap/js/bootstrap-button.js"></script>
-    <script src="bootstrap/js/bootstrap-collapse.js"></script>
-    <script src="bootstrap/js/bootstrap-carousel.js"></script>
-    <script src="bootstrap/js/bootstrap-typeahead.js"></script>
-
+         }
+         return false;
+         
+       }
+    </script>
   </body>
 </html>
 
